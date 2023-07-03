@@ -1,3 +1,39 @@
 :root {
   font-family: sans-serif;
 }
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+  background-color: #eee;
+  height: 100vh;
+}
+
+header,
+footer {
+  flex: 0 0 auto; /* Fixed height */
+  background-color: #f0f0f0;
+  padding: 10px;
+}
+
+main {
+  flex-grow: 1; /* Take remaining vertical space */
+  display: flex;
+}
+
+.lesson {
+  border-radius: 0.5em;
+  box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+  background-color: white;
+}
+
+tt-carousel {
+  height: 100%;
+}
+
+/* Set tt-week to take up full height */
+tt-week {
+  height: 100%;
+}

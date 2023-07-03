@@ -1,7 +1,7 @@
 function generateClockTimes() {
   const times = [];
-  for (let hour = 8; hour < 9; hour++) {
-    for (let minute = 0; minute < 60; minute++) {
+  for (let hour = 8; hour < 18; hour++) {
+    for (let minute = 0; minute <= 60; minute += 5) {
       const formattedHour = hour.toString().padStart(2, "0");
       const formattedMinute = minute.toString().padStart(2, "0");
       const time = `${formattedHour}${formattedMinute}`;
@@ -14,15 +14,17 @@ function generateClockTimes() {
 
 class TimetableWeek extends HTMLElement {
   constructor() {
+    const days = ["monday", "tuesday", "wednesday", "thursday", "friday"];
     super();
     this.attachShadow({ mode: "open" });
-    this.shadowRoot.innerHTML = `<style>
+    this.shadowRoot.innerHTML = `
+    <style>
         .container {
           display: grid;
           width: 100%;
-          grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+          grid-template-columns: repeat(${days.length},1fr);
           grid-template-rows: [col-head] 1em ${generateClockTimes()
-            .map((time) => `[time-${time}] 1fr`)
+            .map((time) => `[time-${time}] 1fr `)
             .join("")};
         }
         .col-head {
@@ -31,22 +33,23 @@ class TimetableWeek extends HTMLElement {
         .row-head {
           grid-column: 1/2;
         }
-        ${["monday", "tuesday", "wednesday", "thursday", "friday"]
+        ${days
           .map((day, index) => {
-            `.${day}, ::slotted(.${day}) {
+            return `.${day}, ::slotted(.${day}) {
             grid-column: ${index + 2} / ${index + 3}
           }`;
           })
           .join("")}
       </style>
       <div class="container">
-        <div class="col-head monday">Mon</div>
-        <div class="col-head tuesday">Tues</div>
-        <div class="col-head monday">Weds</div>
+        <div class="col-head">Mon</div>
+        <div class="col-head">Tues</div>
+        <div class="col-head">Weds</div>
         <div class="col-head">Thu</div>
         <div class="col-head">Fri</div>
         <slot></slot>
       </div>`;
+    console.log(this.shadowRoot.innerHTML);
   }
 }
 

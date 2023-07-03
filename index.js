@@ -1,1 +1,2 @@
-const app = document.querySelector(".timetable");
+import "./tt-carousel.js";
+import "./tt-week.js";

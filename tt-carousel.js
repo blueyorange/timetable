@@ -56,20 +56,11 @@ class TimetableCarousel extends HTMLElement {
     const navElement = this.shadowRoot.querySelector("nav");
     slotElement.assignedElements().forEach((weekEl) => {
       const linkEl = document.createElement("a");
-      //   linkEl.onclick = this.scrollToWeek;
       linkEl.setAttribute("href", `#${weekEl.id}`);
       linkEl.innerHTML = weekEl.id;
       navElement.appendChild(linkEl);
     });
   }
-  //   scrollToWeek(e) {
-  //     e.preventDefault();
-  //     document.querySelector(e.target.getAttribute("href")).scrollIntoView({
-  //       behaviour: "smooth",
-  //       block: "nearest",
-  //       inline: "start",
-  //     });
-  //   }
 }
 
 customElements.define("tt-carousel", TimetableCarousel);

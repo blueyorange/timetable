@@ -19,6 +19,7 @@ footer {
 }
 
 main {
+  border: 1px solid red;
   flex-grow: 1; /* Take remaining vertical space */
   display: flex;
 }
@@ -29,11 +30,11 @@ main {
   background-color: white;
 }
 
-tt-carousel {
-  height: 100%;
+/* tt-carousel {
+  min-height: 400px;
 }
 
 /* Set tt-week to take up full height */
 tt-week {
   height: 100%;
-}
+} */

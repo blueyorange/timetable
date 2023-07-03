@@ -14,14 +14,19 @@ class TimetableCarousel extends HTMLElement {
         }
         .slider {
           width: 100%;
+          height: 100%;
+          display: flex;
+          flex-direction: column;
           text-align: center;
           overflow: hidden;
         }
-        slot {
+        .slides {
           display: flex;
           overflow-x: auto;
           scroll-snap-type: x mandatory;
           scroll-behavior: smooth;
+          flex-grow: 1;
+            height: 100%;
         }
         ::slotted(*) {
           scroll-snap-align: start;
@@ -34,11 +39,15 @@ class TimetableCarousel extends HTMLElement {
         }
         nav {
           display: flex;
+          flex-grow: 0;
           justify-content: center;
         }
+        .slides {
+
+        }
       </style>
-      <nav></nav>
       <div class="slider">
+        <nav></nav>
         <div class="slides"><slot></slot></div>
       </div>`;
   }
@@ -47,20 +56,20 @@ class TimetableCarousel extends HTMLElement {
     const navElement = this.shadowRoot.querySelector("nav");
     slotElement.assignedElements().forEach((weekEl) => {
       const linkEl = document.createElement("a");
-      linkEl.onclick = this.scrollToWeek;
+      //   linkEl.onclick = this.scrollToWeek;
       linkEl.setAttribute("href", `#${weekEl.id}`);
       linkEl.innerHTML = weekEl.id;
       navElement.appendChild(linkEl);
     });
   }
-  scrollToWeek(e) {
-    e.preventDefault();
-    document.querySelector(e.target.getAttribute("href")).scrollIntoView({
-      behaviour: "smooth",
-      block: "nearest",
-      inline: "start",
-    });
-  }
+  //   scrollToWeek(e) {
+  //     e.preventDefault();
+  //     document.querySelector(e.target.getAttribute("href")).scrollIntoView({
+  //       behaviour: "smooth",
+  //       block: "nearest",
+  //       inline: "start",
+  //     });
+  //   }
 }
 
 customElements.define("tt-carousel", TimetableCarousel);

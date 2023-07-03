@@ -22,10 +22,14 @@ class TimetableWeek extends HTMLElement {
         .container {
           display: grid;
           width: 100%;
+          height: 100%;
           grid-template-columns: repeat(${days.length},1fr);
           grid-template-rows: [col-head] 1em ${generateClockTimes()
             .map((time) => `[time-${time}] 1fr `)
             .join("")};
+        }
+        slot {
+            height: 100%;
         }
         .col-head {
           grid-row: 1/2;
@@ -49,7 +53,6 @@ class TimetableWeek extends HTMLElement {
         <div class="col-head">Fri</div>
         <slot></slot>
       </div>`;
-    console.log(this.shadowRoot.innerHTML);
   }
 }
 

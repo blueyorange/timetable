@@ -5,16 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Timetable</title>
     <link rel="stylesheet" href="style.css" />
-    <script src="index.js"></script>
-    <script src="tt-week.js"></script>
-    <script src="tt-carousel.js"></script>
+    <script src="index.js" type="module"></script>
   </head>
   <body>
     <header><h1>Timetable</h1></header>
     <main>
       <tt-carousel>
         <tt-week id="week-01">
-          <article class="thursday">week 1 weds period 5</article>
+          <article
+            class="lesson thursday"
+            style="grid-row: time-0835 / time-0950"
+          >
+            week 1 weds period 5
+          </article>
         </tt-week>
         <tt-week id="week-02">2</tt-week>
       </tt-carousel>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Timetable</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="index.js"></script>
+    <script src="tt-carousel.js"></script>
+    <script src="tt-week.js"></script>
+    <template id="tt-week">
+      <style>
+        .container {
+          display: grid;
+          width: 100%;
+          grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+          grid-template-rows: [col-head] 1em repeat(5, 1fr);
+        }
+        .col-head {
+          grid-row: 1/2;
+        }
+        .row-head {
+          grid-column: 1/2;
+        }
+        .monday {
+          grid-column: 1/2;
+        }
+        .tuesday {
+          grid-column: 2/3;
+        }
+        .wednesday,
+        ::slotted(.wednesday) {
+          grid-column: 3/4;
+        }
+        .thursday {
+          grid-column: 4/5;
+        }
+        .friday {
+          grid-column: 5/6;
+        }
+        .period-1 {
+          grid-row: 2/3;
+        }
+        .period-2 {
+          grid-row: 3/4;
+        }
+        .period-3 {
+          grid-row: 4/5;
+        }
+        .period-4 {
+          grid-row: 5/6;
+        }
+        .period-5 {
+          grid-row: 6/7;
+        }
+      </style>
+      <div class="container">
+        <div class="col-head">Mon</div>
+        <div class="col-head">Tues</div>
+        <div class="col-head">Weds</div>
+        <div class="col-head">Thu</div>
+        <div class="col-head">Fri</div>
+        <slot></slot>
+      </div>
+    </template>
+    <template id="tt-carousel">
+      <style>
+        * {
+          box-sizing: border-box;
+        }
+        .slider {
+          width: 100%;
+          text-align: center;
+          overflow: hidden;
+        }
+        slot {
+          display: flex;
+          overflow-x: auto;
+          scroll-snap-type: x mandatory;
+          scroll-behavior: smooth;
+        }
+        ::slotted(*) {
+          scroll-snap-align: start;
+          flex-shrink: 0;
+          width: 100%;
+          height: 500px;
+          transition: transform 0.5s;
+          position: relative;
+          display: flex;
+          justify-content: center;
+        }
+      </style>
+      <div class="slider">
+        <nav>
+          <a href="#slide-1">1</a>
+          <a href="#slide-2">2</a>
+        </nav>
+        <div class="slides"><slot></slot></div>
+      </div>
+    </template>
+  </head>
+  <body>
+    <header><h1>Timetable</h1></header>
+    <main>
+      <tt-carousel>
+        <tt-week id="week-01">
+          <article class="thursday">week 1 weds period 5</article>
+        </tt-week>
+        <tt-week id="week-02">2</tt-week>
+      </tt-carousel>
+    </main>
+  </body>
+</html>

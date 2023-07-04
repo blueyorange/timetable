@@ -6,9 +6,9 @@ class TimetableCarousel extends HTMLElement {
     this.attachShadow({ mode: "open" });
     this.shadowRoot.innerHTML = /*html*/ `
       <style>
-      :host {
-        width: 100%;
-      }
+        :host {
+          width: 100%;
+        }
         * {
           box-sizing: border-box;
         }
@@ -26,7 +26,7 @@ class TimetableCarousel extends HTMLElement {
           scroll-snap-type: x mandatory;
           scroll-behavior: smooth;
           flex-grow: 1;
-            height: 100%;
+          height: 100%;
         }
         ::slotted(*) {
           scroll-snap-align: start;
@@ -39,11 +39,19 @@ class TimetableCarousel extends HTMLElement {
         }
         nav {
           display: flex;
-          flex-grow: 0;
           justify-content: center;
+          padding: 1em;
         }
-        a {
+        nav > a {
           text-decoration: none;
+          color: black;
+          padding: 0.6em 1em;
+          background-color: white;
+          margin: 0 1em;
+          border-radius: 1em;
+        }
+        nav > a:hover {
+          background-color: #fee;
         }
       </style>
       <div class="slider">

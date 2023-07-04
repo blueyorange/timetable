@@ -82,6 +82,9 @@ class TimetableWeek extends HTMLElement {
         ::slotted(.period-7.friday) {
           grid-row: time-1525 / time-1620;
         }
+        ::slotted(.period-8.friday) {
+          grid-row: time-1625 / time-1720;
+        }
         .gridline {
           z-index: 1;
           grid-column: 2 / 7;

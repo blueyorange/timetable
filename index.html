@@ -11,15 +11,19 @@
     <header><h1>Timetable</h1></header>
     <main>
       <tt-carousel>
-        <tt-week id="week-01">
+        <tt-week id="week-01" data-name="Week A">
+          <article class="lesson wednesday period-1">
+            week 1 thu period 1
+          </article>
+        </tt-week>
+        <tt-week id="week-02" data-name="Week B">
           <article
-            class="lesson thursday"
-            style="grid-row: time-0835 / time-0950"
+            class="lesson monday period-1"
+            style="grid-row: time-1200 / time-1500"
           >
             week 1 weds period 5
           </article>
         </tt-week>
-        <tt-week id="week-02"></tt-week>
       </tt-carousel>
     </main>
   </body>

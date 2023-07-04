@@ -4,7 +4,7 @@ class TimetableCarousel extends HTMLElement {
   constructor() {
     super();
     this.attachShadow({ mode: "open" });
-    this.shadowRoot.innerHTML = `
+    this.shadowRoot.innerHTML = /*html*/ `
       <style>
       :host {
         width: 100%;
@@ -42,8 +42,8 @@ class TimetableCarousel extends HTMLElement {
           flex-grow: 0;
           justify-content: center;
         }
-        .slides {
-
+        a {
+          text-decoration: none;
         }
       </style>
       <div class="slider">
@@ -54,10 +54,11 @@ class TimetableCarousel extends HTMLElement {
   connectedCallback() {
     const slotElement = this.shadowRoot.querySelector("slot");
     const navElement = this.shadowRoot.querySelector("nav");
+    // make a jump link for each week
     slotElement.assignedElements().forEach((weekEl) => {
       const linkEl = document.createElement("a");
       linkEl.setAttribute("href", `#${weekEl.id}`);
-      linkEl.innerHTML = weekEl.id;
+      linkEl.textContent = weekEl.getAttribute("data-name");
       navElement.appendChild(linkEl);
     });
   }

@@ -48,6 +48,40 @@ class TimetableWeek extends HTMLElement {
           }`;
           })
           .join("")}
+        ::slotted(.period-1) {
+          grid-row: time-0900 / time-0955;
+
+        }
+        ::slotted(.period-2) {
+          grid-row: time-1000 / time-1055;
+        }
+        ::slotted(.break) {
+          grid-row: time-1055 / time-1120;
+        }
+        ::slotted(.period-3) {
+          grid-row: time-1120 / time-1215;
+        }
+        ::slotted(.period-4) {
+          grid-row: time-1220 / time-1255;
+        }
+        ::slotted(.period-5) {
+          grid-row: time-1300 / time-1355;
+        }
+        ::slotted(.period-6) {
+          grid-row: time-1400 / time-1455;
+        }
+        ::slotted(.period-7) {
+          grid-row: time-1500 / time-1555;
+        }
+        ::slotted(.period-8) {
+          grid-row: time-1620 / time-1515;
+        }
+        ::slotted(.period-6.friday) {
+          grid-row: time-1425 / time-1520;
+        }
+        ::slotted(.period-7.friday) {
+          grid-row: time-1525 / time-1620;
+        }
         .gridline {
           z-index: 1;
           grid-column: 2 / 7;

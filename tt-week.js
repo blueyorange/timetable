@@ -112,7 +112,7 @@ class TimetableWeek extends HTMLElement {
         ${times
           .map((time, index, times) => {
             if (/[0-2]\d00/.test(time)) {
-              console.log(time);
+              // major gridline if on the hour
               return /*html*/ `<div class="gridline gridline-major" style="grid-row: time-${time}/time-${
                 times[index + 1]
               };"></div><time datetime="${time}" class="time" style="grid-row: time-${time}/time-${

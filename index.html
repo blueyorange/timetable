@@ -4,52 +4,61 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Timetable</title>
-    <link rel="stylesheet" href="style.css" />
-    <script src="index.js" type="module"></script>
+    <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body>
     <header><h1>Timetable</h1></header>
     <main>
-      <tt-carousel>
-        <tt-week id="week-01" data-name="Week A">
-          <article class="monday period-1">13 Physics</article>
-          <article class="monday period-3">12 Physics</article>
-          <article class="monday period-7">11P1 Physics</article>
-          <article class="tuesday period-1">7K IT</article>
-          <article class="tuesday period-2">8 Maths</article>
-          <article class="tuesday period-3">11P4 Physics</article>
-          <article class="tuesday period-4">Prep</article>
-          <article class="tuesday period-6">13 Physics</article>
-          <article class="tuesday period-7">7M IT</article>
-          <article class="wednesday period-1">12 Physics</article>
-          <article class="wednesday period-2">7L IT</article>
-          <article class="thursday period-6">11P4 Physics</article>
-          <article class="thursday period-7">13 Physics</article>
-          <article class="friday period-1">12 Physics</article>
-          <article class="friday period-6">11P1 Physics</article>
-          <article class="friday period-8">ACT</article>
-        </tt-week>
-        <tt-week id="week-02" data-name="Week B">
-          <article class="monday period-2">11 Physics</article>
-          <article class="monday period-3">12 Physics</article>
-          <article class="monday period-6">13 Physics</article>
-          <article class="monday period-7">8M2 Maths</article>
-          <article class="tuesday period-1">11P1 Physics</article>
-          <article class="tuesday period-2">7K IT</article>
-          <article class="tuesday period-3">11P4 Physics</article>
-          <article class="tuesday period-4">Prep</article>
-          <article class="tuesday period-6">13 Physics</article>
-          <article class="tuesday period-7">7L IT</article>
-          <article class="wednesday period-2">12 Physics</article>
-          <article class="wednesday period-3">7M IT</article>
-          <article class="wednesday period-7">8M2 Maths</article>
-          <article class="thursday period-2">12 Physics</article>
-          <article class="thursday period-3">11P4 Physics</article>
-          <article class="friday period-6">8M2 Maths</article>
-          <article class="friday period-7">11P1 Physics</article>
-          <article class="friday period-8">ACT</article>
-        </tt-week>
-      </tt-carousel>
+      <div class="carousel">
+        <div class="slider">
+          <nav><a href="#week-01">Week A</a> <a href="#week-02">Week B</a></nav>
+          <div class="slides">
+            <div class="week" id="week-01">
+              <div class="col-head monday">Monday</div>
+              <div class="col-head tuesday">Tuesday</div>
+              <div class="col-head wednesday">Wednesday</div>
+              <div class="col-head thursday">Thursday</div>
+              <div class="col-head friday">Friday</div>
+              <article class="monday period-1">13 Physics</article>
+              <article class="monday period-3">12 Physics</article>
+              <article class="monday period-7">11P1 Physics</article>
+              <article class="tuesday period-1">7K IT</article>
+              <article class="tuesday period-2">8 Maths</article>
+              <article class="tuesday period-3">11P4 Physics</article>
+              <article class="tuesday period-4">Prep</article>
+              <article class="tuesday period-6">13 Physics</article>
+              <article class="tuesday period-7">7M IT</article>
+              <article class="wednesday period-1">12 Physics</article>
+              <article class="wednesday period-2">7L IT</article>
+              <article class="thursday period-6">11P4 Physics</article>
+              <article class="thursday period-7">13 Physics</article>
+              <article class="friday period-1">12 Physics</article>
+              <article class="friday period-6">11P1 Physics</article>
+              <article class="friday period-8">ACT</article>
+            </div>
+            <div class="week" id="week-02">
+              <article class="monday period-2">11 Physics</article>
+              <article class="monday period-3">12 Physics</article>
+              <article class="monday period-6">13 Physics</article>
+              <article class="monday period-7">8M2 Maths</article>
+              <article class="tuesday period-1">11P1 Physics</article>
+              <article class="tuesday period-2">7K IT</article>
+              <article class="tuesday period-3">11P4 Physics</article>
+              <article class="tuesday period-4">Prep</article>
+              <article class="tuesday period-6">13 Physics</article>
+              <article class="tuesday period-7">7L IT</article>
+              <article class="wednesday period-2">12 Physics</article>
+              <article class="wednesday period-3">7M IT</article>
+              <article class="wednesday period-7">8M2 Maths</article>
+              <article class="thursday period-2">12 Physics</article>
+              <article class="thursday period-3">11P4 Physics</article>
+              <article class="friday period-6">8M2 Maths</article>
+              <article class="friday period-7">11P1 Physics</article>
+              <article class="friday period-8">ACT</article>
+            </div>
+          </div>
+        </div>
+      </div>
     </main>
   </body>
 </html>

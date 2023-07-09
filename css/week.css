@@ -1,0 +1,88 @@
+.week {
+  display: grid;
+  width: 100%;
+  height: 100%;
+  grid-template-columns: auto repeat(5, 1fr);
+  grid-template-rows:
+    [col-head] 1em
+    [time-0900] 1fr
+    [time-1000] 1fr
+    [time-1100] 1fr
+    [time-1120] 1fr
+    [time-1220] 1fr;
+
+  .col-head {
+    grid-row: 1/2;
+  }
+  .row-head {
+    grid-column: 1/2;
+  }
+  .monday {
+    grid-column: 2/3;
+  }
+  .tuesday {
+    grid-column: 3/4;
+  }
+  .wednesday {
+    grid-column: 4/5;
+  }
+  .thursday {
+    grid-column: 5/6;
+  }
+  .friday {
+    grid-column: 6/7;
+  }
+  .period-1 {
+    grid-row: time-0900 / time-0955;
+  }
+  .period-2 {
+    grid-row: time-1000 / time-1055;
+  }
+  .break {
+    grid-row: time-1055 / time-1120;
+  }
+  .period-3 {
+    grid-row: time-1120 / time-1215;
+  }
+  .period-4 {
+    grid-row: time-1220 / time-1255;
+  }
+  .period-5 {
+    grid-row: time-1300 / time-1355;
+  }
+  .period-6 {
+    grid-row: time-1400 / time-1455;
+  }
+  .period-7 {
+    grid-row: time-1500 / time-1555;
+  }
+  .period-8 {
+    grid-row: time-1620 / time-1515;
+  }
+  .period-6.friday {
+    grid-row: time-1425 / time-1520;
+  }
+  .period-7.friday {
+    grid-row: time-1525 / time-1620;
+  }
+  .period-8.friday {
+    grid-row: time-1625 / time-1720;
+  }
+  .gridline {
+    z-index: 1;
+    grid-column: 2 / 7;
+  }
+  .gridline-major {
+    grid-column: 1/7;
+    border-top: 1px solid grey;
+  }
+  .gridline-minor {
+    border-top: 1px solid lightgrey;
+  }
+  .time {
+    grid-column: 1/2;
+    height: 0;
+    overflow: visible;
+    background-color: #444;
+  }
+}

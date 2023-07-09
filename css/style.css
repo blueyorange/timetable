@@ -1,3 +1,6 @@
+@import url("./carousel.css");
+@import url("./week.css");
+
 :root {
   font-family: sans-serif;
 }
@@ -23,7 +26,7 @@ main {
   display: flex;
 }
 
-tt-week > article {
+.week > article {
   border: 1px solid grey;
   padding: 0.5em;
   margin: 0 0.2em;

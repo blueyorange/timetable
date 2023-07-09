@@ -54,10 +54,7 @@ class TimetableCarousel extends HTMLElement {
           background-color: #fee;
         }
       </style>
-      <div class="slider">
-        <nav></nav>
-        <div class="slides"><slot></slot></div>
-      </div>`;
+`;
   }
   connectedCallback() {
     const slotElement = this.shadowRoot.querySelector("slot");

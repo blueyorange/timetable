@@ -17,7 +17,7 @@
   flex-grow: 1;
   height: 100%;
 }
-.week {
+.slides > * {
   scroll-snap-align: start;
   flex-shrink: 0;
   width: 100%;

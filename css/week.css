@@ -7,9 +7,18 @@
     [col-head] 1em
     [time-0900] 1fr
     [time-1000] 1fr
-    [time-1100] 1fr
+    [time-1100] 0.33fr
     [time-1120] 1fr
-    [time-1220] 1fr;
+    [time-1220] 1fr
+    [time-1300] 0.33fr
+    [time-1320] 0.66fr
+    [time-1400] 0.33fr
+    [time-1420] 0.66fr
+    [time-1500] 0.33fr
+    [time-1520] 0.66fr
+    [time-1600] 0.33fr
+    [time-1620] 1fr
+    [time-1720] 1fr;
 
   .col-head {
     grid-row: 1/2;
@@ -33,51 +42,40 @@
     grid-column: 6/7;
   }
   .period-1 {
-    grid-row: time-0900 / time-0955;
+    grid-row: time-0900 / time-1000;
   }
   .period-2 {
-    grid-row: time-1000 / time-1055;
+    grid-row: time-1000 / time-1100;
   }
   .break {
-    grid-row: time-1055 / time-1120;
+    grid-row: time-1100 / time-1120;
   }
   .period-3 {
-    grid-row: time-1120 / time-1215;
+    grid-row: time-1120 / time-1220;
   }
   .period-4 {
-    grid-row: time-1220 / time-1255;
+    grid-row: time-1220 / time-1300;
   }
   .period-5 {
-    grid-row: time-1300 / time-1355;
+    grid-row: time-1300 / time-1400;
   }
   .period-6 {
-    grid-row: time-1400 / time-1455;
+    grid-row: time-1400 / time-1500;
   }
   .period-7 {
-    grid-row: time-1500 / time-1555;
+    grid-row: time-1500 / time-1600;
   }
   .period-8 {
-    grid-row: time-1620 / time-1515;
+    grid-row: time-1620 / time-1720;
   }
   .period-6.friday {
-    grid-row: time-1425 / time-1520;
+    grid-row: time-1420 / time-1520;
   }
   .period-7.friday {
-    grid-row: time-1525 / time-1620;
+    grid-row: time-1520 / time-1620;
   }
   .period-8.friday {
     grid-row: time-1625 / time-1720;
-  }
-  .gridline {
-    z-index: 1;
-    grid-column: 2 / 7;
-  }
-  .gridline-major {
-    grid-column: 1/7;
-    border-top: 1px solid grey;
-  }
-  .gridline-minor {
-    border-top: 1px solid lightgrey;
   }
   .time {
     grid-column: 1/2;
